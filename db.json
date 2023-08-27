@@ -1,0 +1,64 @@
+{
+  "products": [
+    {
+      "name": "Laptop888",
+      "price": 123,
+      "description": "124532324535",
+      "id": 2
+    },
+    {
+      "name": "1213",
+      "description": "fdsfdsfsdfsdfd",
+      "price": 123,
+      "id": 7
+    },
+    {
+      "name": "1213",
+      "description": "bbbbbbbbbb",
+      "price": 100,
+      "id": 9
+    },
+    {
+      "name": "bdds",
+      "description": "dfdfggfdhgfhfg",
+      "price": 123,
+      "id": 10
+    },
+    {
+      "name": "bvdfvdf",
+      "description": "fdgdfgdhghfgd",
+      "price": 123,
+      "id": 11
+    },
+    {
+      "name": "123",
+      "description": "rfdfewrwerwer",
+      "price": 112,
+      "id": 12
+    },
+    {
+      "name": "ewer",
+      "description": "ewfdvfdgfdgdf",
+      "price": 343,
+      "id": 13
+    },
+    {
+      "name": "21323",
+      "description": "dsfdgdgfdghfdh",
+      "price": 233,
+      "id": 14
+    },
+    {
+      "name": "12",
+      "description": "efdfgdgfdgfdgf",
+      "price": 222,
+      "id": 15
+    }
+  ],
+  "users": [
+    {
+      "email": "abc@gmail.com",
+      "password": "12345678"
+    }
+  ]
+}
