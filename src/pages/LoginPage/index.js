@@ -18,36 +18,36 @@ import { useDispatch } from "react-redux";
 import { loginAction, loginActionV2 } from "../../store/slices/notificationSlice";
 
 export default function LoginPage() {
-  // const navigate = useNavigate();
-  // const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   const data = new FormData(event.currentTarget);
-  //   console.log({
-  //     email: data.get("email"),
-  //     password: data.get("password"),
-  //   });
-  //   dispatch(
-  //     loginActionV2({
-  //       email: data.get("email"),
-  //       password: data.get("password"),
-  //     })
-  //   );
-  //   // const response = await axiosClient.get("/users", {
-  //   //   params: {
-  //   //     email: data.get("email"),
-  //   //     password: data.get("password"),
-  //   //   },
-  //   // });
-  //   // if (response.data.length) {
-  //   //   dispatch(showNotification("Login Succeed!"));
-  //   //   localStorage.setItem("token", "token123");
-  //   //   navigate("/admin/product");
-  //   // } else {
-  //   //   dispatch(showNotification("Login Fail!"));
-  //   // }
-  // };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get("email"),
+      password: data.get("password"),
+    });
+    dispatch(
+      loginActionV2({
+        email: data.get("email"),
+        password: data.get("password"),
+      })
+    );
+    // const response = await axiosClient.get("/users", {
+    //   params: {
+    //     email: data.get("email"),
+    //     password: data.get("password"),
+    //   },
+    // });
+    // if (response.data.length) {
+    //   dispatch(showNotification("Login Succeed!"));
+    //   localStorage.setItem("token", "token123");
+    //   navigate("/admin/product");
+    // } else {
+    //   dispatch(showNotification("Login Fail!"));
+    // }
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -66,7 +66,7 @@ export default function LoginPage() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        {/* <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
           <TextField
             margin="normal"
             required
@@ -91,7 +91,7 @@ export default function LoginPage() {
           <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
             Sign In
           </Button>
-        </Box> */}
+        </Box>
       </Box>
     </Container>
   );

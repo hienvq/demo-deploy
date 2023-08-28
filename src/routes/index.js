@@ -6,6 +6,10 @@ import UserPage from "../pages/UserPage";
 
 const router = createBrowserRouter([
   {
+    path: "/",
+    element: <LoginPage />,
+  },
+  {
     path: "/login",
     element: <LoginPage />,
   },

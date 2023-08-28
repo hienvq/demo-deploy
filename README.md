@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+Prepare
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Push Source code to github
+- Create AWS EC2 Instance and Open connection
+- Install nvm, git, nginx, pm2
 
-## Available Scripts
+* https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html
+* sudo yum install git
+* sudo yum install nginx
+* npm install pm2@latest -g
 
-In the project directory, you can run:
+- open url to check nginx
+- Pull code from github
 
-### `npm start`
+Deploy Backend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- cd to folder source code
+- npm install
+- pm2 start "npm run server" --name json-server
+- Open Edit nginx config file: sudo nano /etc/nginx/nginx.conf
+- add: location /api {
+  proxy_pass http://127.0.0.1:3005;
+  }
+- restart nginx: sudo service nginx restart
+- verify api
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Deploy Frontend
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- update endpoint api, commit code to github
+- connect to ec2, pull code from github
+- Pull code from github
+- cd to folder source code
+- npm install
+- npm run build
+- Open Edit nginx config file: sudo nano /etc/nginx/nginx.conf
+- update: root /home/ec2-user/${PROJECT_NAME}/build;
+  index index.html index.htm;
+- add: location / {
+  try_files $uri /index.html;
+  }
+- grant permission to access folder code: sudo chmod 755 /home
+- restart nginx: sudo service nginx restart
+- verify frontend

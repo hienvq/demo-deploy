@@ -9,20 +9,17 @@ import ProductPage from "./pages/ProductPage";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <ToastMessage />
+      <RouterProvider router={router} />
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="admin" element={<h2>abc</h2>} />
           <Route path="admin/product" element={<PrivateComponent component={ProductPage} />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
   );
 }
-{
-  /* <ToastMessage test={"123"} /> */
-}
-{
-  /* <RouterProvider router={router} /> */
-}
+
 export default App;

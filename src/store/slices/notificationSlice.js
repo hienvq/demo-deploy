@@ -42,7 +42,6 @@ export const notificationSlice = createSlice({
   initialState,
   reducers: {
     show: (state, action) => {
-      console.log("HienVQ ~  action:", action);
       state.isOpen = true;
       state.content = action.payload.content;
     },
@@ -58,12 +57,7 @@ export const notificationSlice = createSlice({
       localStorage.setItem("token", "token123");
       window.location.replace("/admin/product");
     },
-
-    [loginActionV2.pending]: (state, action) => {
-      console.log("HienVQ ~  action pending:", action);
-    },
     [loginActionV2.rejected]: (state, action) => {
-      console.log("HienVQ ~  action rejected:", action);
       state.isOpen = true;
       state.content = "Login Fail!";
     },

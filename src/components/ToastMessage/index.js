@@ -26,13 +26,4 @@ const ToastMessage = (props) => {
     />
   );
 };
-// const mapStateToProps = (state, ownProps) => {
-//   return state.notification;
-// };
-// const mapDispatchToProps = (dispatch, ownProps) => {
-//   return {
-//     show: (content) => dispatch(showNotification(content)),
-//     hide: () => dispatch(hideNotification()),
-//   };
-// };
 export default ToastMessage;
