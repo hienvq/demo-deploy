@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-  baseURL: "http://localhost:3005",
+  baseURL: "http://13.250.26.179/api",
 });
 axiosClient.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
