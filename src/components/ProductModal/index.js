@@ -64,7 +64,7 @@ const ProductModal = () => {
           } else {
             await handleCreateProduct({ name: values.name, description: values.description, price: values.price });
           }
-          // resetForm();
+          form.resetForm();
           if (pagingData.currentPage === 0 || values.id) {
             refetch();
           } else {
@@ -73,6 +73,7 @@ const ProductModal = () => {
               currentPage: 0,
             });
           }
+          handleClose();
         }}
       >
         {({ resetForm }) => (
