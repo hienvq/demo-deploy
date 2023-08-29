@@ -38,7 +38,7 @@ Deploy Frontend
 - update: root /home/ec2-user/demo-deploy/build;
   index index.html index.htm;
 - add: location / {
-  try_files $uri /index.html;
+  try_files $uri $uri/ /index.html;
   }
 - grant permission to access folder code: sudo chmod 755 /home/ec2-user
 - restart nginx: sudo service nginx restart
