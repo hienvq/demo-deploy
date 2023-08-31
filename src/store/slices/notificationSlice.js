@@ -32,7 +32,7 @@ export const loginAction = (email, password) => async (dispatch) => {
   if (response.data.length) {
     dispatch(show({ content: "Login Succeed!" }));
     localStorage.setItem("token", "token123");
-    window.location.replace("/hien/admin/product");
+    window.location.replace("/admin/product");
   } else {
     dispatch(show({ content: "Login Fail!" }));
   }
@@ -55,7 +55,7 @@ export const notificationSlice = createSlice({
       state.isOpen = true;
       state.content = "Login Succeed!";
       localStorage.setItem("token", "token123");
-      window.location.replace("/hien/admin/product");
+      window.location.replace("/admin/product");
     },
     [loginActionV2.rejected]: (state, action) => {
       state.isOpen = true;
