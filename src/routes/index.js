@@ -40,7 +40,7 @@ const router = createBrowserRouter(
       ],
     },
   ],
-  { basename: "web2" }
+  { basename: "/web2" }
 );
 
 export default router;
