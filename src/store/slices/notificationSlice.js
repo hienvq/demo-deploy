@@ -32,7 +32,7 @@ export const loginAction = (email, password) => async (dispatch) => {
   if (response.data.length) {
     dispatch(show({ content: "Login Succeed!" }));
     localStorage.setItem("token", "token123");
-    window.location.replace("/admin/product");
+    window.location.replace("/hien/admin/product");
   } else {
     dispatch(show({ content: "Login Fail!" }));
   }
