@@ -55,7 +55,7 @@ export const notificationSlice = createSlice({
       state.isOpen = true;
       state.content = "Login Succeed!";
       localStorage.setItem("token", "token123");
-      window.location.replace("/admin/product");
+      window.location.replace("/hien/admin/product");
     },
     [loginActionV2.rejected]: (state, action) => {
       state.isOpen = true;
