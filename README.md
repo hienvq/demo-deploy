@@ -43,3 +43,13 @@ Deploy Frontend
 - grant permission to access folder code: sudo chmod 755 /home/ec2-user
 - restart nginx: sudo service nginx restart
 - verify frontend
+
+location /web1 {
+root /usr/share/nginx/html;
+index index.html;
+try_files $uri $uri/ /web1/index.html;
+}
+location /web2 {
+alias /home/ec2-user/demo-deploy/build;
+try_files $uri $uri/ /web2/index.html;
+}

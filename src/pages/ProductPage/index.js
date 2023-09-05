@@ -43,12 +43,16 @@ const ProductPage = (props) => {
     });
     setListProduct(data);
   };
-  const handleSearch = () => {
-    setPagingData({
-      ...pagingData,
-      currentPage: 0,
-      search: ref.current.value?.trim(),
-    });
+  const handleSearch = async () => {
+    if (pagingData.currentPage !== 0) {
+      setPagingData({
+        ...pagingData,
+        currentPage: 0,
+        search: ref.current.value?.trim(),
+      });
+    } else {
+      await getPagingProduct();
+    }
   };
   React.useEffect(() => {
     getPagingProduct();
